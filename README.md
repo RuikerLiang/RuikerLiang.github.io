@@ -93,16 +93,16 @@ Production files are generated in `dist/`.
    - deploy `dist/` to GitHub Pages automatically on every push to `main`
 5. This workflow is configured for this repository with:
    - `PUBLIC_SITE_URL=https://ruikerliang.github.io`
-   - `PUBLIC_BASE_PATH=/Unimodal.github.io`
+   - `PUBLIC_BASE_PATH=/`
 
 ### Option B: Manual Deploy
 
-1. Build locally: `PUBLIC_SITE_URL=https://ruikerliang.github.io PUBLIC_BASE_PATH=/Unimodal.github.io npm run build`
+1. Build locally: `PUBLIC_SITE_URL=https://ruikerliang.github.io PUBLIC_BASE_PATH=/ npm run build`
 2. Upload `dist/` to your Pages branch / hosting target.
 3. Keep the same environment variables if you want canonical links and static asset paths to match the deployed site.
 
 ## Notes
 
 - `public/cv.pdf` is currently a placeholder PDF. Replace it with your real CV file.
-- Current Pages site is configured with `PUBLIC_SITE_URL=https://ruikerliang.github.io` and `PUBLIC_BASE_PATH=/Unimodal.github.io`.
+- Current Pages site is configured with `PUBLIC_SITE_URL=https://ruikerliang.github.io` and `PUBLIC_BASE_PATH=/`.
 - The site is fully static and suitable for fast deployment and maintenance.

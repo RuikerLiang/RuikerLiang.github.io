@@ -20,7 +20,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       PUBLIC_SITE_URL: https://ruikerliang.github.io
-      PUBLIC_BASE_PATH: /Unimodal.github.io
+      PUBLIC_BASE_PATH: /
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
