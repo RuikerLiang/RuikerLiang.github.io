@@ -1,0 +1,43 @@
+---
+import type { Project } from '@/data/projects';
+
+interface Props {
+  project: Project;
+}
+
+const { project } = Astro.props as Props;
+---
+
+<article class="card-base card-hover flex h-full flex-col" data-reveal>
+  <div class="flex items-start justify-between gap-3">
+    <h3 class="text-lg font-semibold text-slate-900">{project.name}</h3>
+    <span class="shrink-0 rounded-full bg-slate-100 px-2.5 py-1 text-xs font-medium text-slate-600">{project.period}</span>
+  </div>
+
+  <p class="mt-3 text-sm leading-6 text-slate-600">{project.summary}</p>
+
+  <div class="mt-4">
+    <p class="text-sm font-medium text-slate-800">My Contribution</p>
+    <p class="mt-1 text-sm leading-6 text-slate-600">{project.contribution}</p>
+  </div>
+
+  <ul class="mt-4 flex flex-wrap gap-2" aria-label="Technologies">
+    {project.technologies.map((tech) => (
+      <li class="rounded-full bg-accent-50 px-2.5 py-1 text-xs font-medium text-accent-700">{tech}</li>
+    ))}
+  </ul>
+
+  {(project.links?.paper || project.links?.code || project.links?.demo) && (
+    <div class="mt-5 flex flex-wrap gap-2 pt-1">
+      {project.links?.paper && (
+        <a href={project.links.paper} target="_blank" rel="noopener noreferrer" class="btn-secondary">Paper</a>
+      )}
+      {project.links?.code && (
+        <a href={project.links.code} target="_blank" rel="noopener noreferrer" class="btn-secondary">Code</a>
+      )}
+      {project.links?.demo && (
+        <a href={project.links.demo} target="_blank" rel="noopener noreferrer" class="btn-secondary">Demo</a>
+      )}
+    </div>
+  )}
+</article>

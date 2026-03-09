@@ -1,0 +1,19 @@
+---
+interface Props {
+  title: string;
+  keywords: string[];
+  summary: string;
+}
+
+const { title, keywords, summary } = Astro.props as Props;
+---
+
+<article class="card-base card-hover h-full" data-reveal>
+  <h3 class="text-lg font-semibold text-slate-900">{title}</h3>
+  <ul class="mt-3 flex flex-wrap gap-2" aria-label="Keywords">
+    {keywords.map((keyword) => (
+      <li class="rounded-full bg-slate-100 px-2.5 py-1 text-xs font-medium text-slate-600">{keyword}</li>
+    ))}
+  </ul>
+  <p class="mt-4 text-sm leading-6 text-slate-600">{summary}</p>
+</article>

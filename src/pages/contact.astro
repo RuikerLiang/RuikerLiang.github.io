@@ -1,0 +1,28 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import Navbar from '@/components/Navbar.astro';
+import Footer from '@/components/Footer.astro';
+import SectionTitle from '@/components/SectionTitle.astro';
+import ContactList from '@/components/ContactList.astro';
+import { contactInfo } from '@/data/profile';
+---
+
+<Layout
+  title="Kerui Zhang | Contact"
+  description="Contact information for Kerui Zhang, including email, academic email, and academic profiles."
+  path="/contact"
+>
+  <Navbar />
+  <main class="section-space">
+    <div class="container-page">
+      <section aria-labelledby="contact-title">
+        <SectionTitle
+          title="Contact"
+          subtitle="Feel free to reach out for research collaboration, graduate opportunities, or academic discussion."
+        />
+        <ContactList contact={contactInfo} />
+      </section>
+    </div>
+  </main>
+  <Footer />
+</Layout>

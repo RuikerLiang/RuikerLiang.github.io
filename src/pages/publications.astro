@@ -1,0 +1,40 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import Navbar from '@/components/Navbar.astro';
+import Footer from '@/components/Footer.astro';
+import SectionTitle from '@/components/SectionTitle.astro';
+import PublicationItem from '@/components/PublicationItem.astro';
+import { publications } from '@/data/publications';
+---
+
+<Layout
+  title="Kerui Zhang | Publications"
+  description="Publications and preprints of Kerui Zhang."
+  path="/publications"
+>
+  <Navbar />
+  <main class="section-space">
+    <div class="container-page">
+      <section aria-labelledby="publications-title">
+        <SectionTitle
+          title="Publications & Preprints"
+          subtitle="Structured publication list with support for paper, code, poster, and slides links."
+        />
+
+        {publications.length > 0 ? (
+          <div class="space-y-4">
+            {publications.map((item) => (
+              <PublicationItem publication={item} />
+            ))}
+          </div>
+        ) : (
+          <div class="card-base text-center" data-reveal>
+            <p class="text-base font-medium text-slate-700">Publications coming soon.</p>
+            <p class="mt-2 text-sm text-slate-500">I am currently preparing manuscripts and preprints.</p>
+          </div>
+        )}
+      </section>
+    </div>
+  </main>
+  <Footer />
+</Layout>

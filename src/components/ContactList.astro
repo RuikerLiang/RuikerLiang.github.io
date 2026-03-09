@@ -1,0 +1,79 @@
+---
+import type { ContactInfo } from '@/data/profile';
+
+interface Props {
+  contact: ContactInfo;
+}
+
+const { contact } = Astro.props as Props;
+
+const entries = [
+  { label: 'Name', value: contact.name },
+  { label: 'Email', value: contact.email, href: `mailto:${contact.email}`, copy: contact.email },
+  {
+    label: 'Academic Email',
+    value: contact.academicEmail,
+    href: `mailto:${contact.academicEmail}`,
+    copy: contact.academicEmail
+  },
+  { label: 'GitHub', value: contact.github, href: contact.github },
+  { label: 'Google Scholar', value: contact.googleScholar, href: contact.googleScholar },
+  { label: 'CV Link', value: contact.cvLink, href: contact.cvLink },
+  { label: 'Location', value: contact.location },
+  ...(contact.linkedin ? [{ label: 'LinkedIn', value: contact.linkedin, href: contact.linkedin }] : []),
+  ...(contact.x ? [{ label: 'X', value: contact.x, href: contact.x }] : []),
+  ...(contact.blog ? [{ label: 'Personal Blog', value: contact.blog, href: contact.blog }] : [])
+];
+---
+
+<div class="card-base" data-reveal>
+  <dl class="divide-y divide-slate-200">
+    {entries.map((item) => (
+      <div class="grid gap-2 py-3 sm:grid-cols-[11rem_1fr_auto] sm:items-center">
+        <dt class="text-sm font-medium text-slate-700">{item.label}</dt>
+        <dd class="min-w-0 text-sm text-slate-600">
+          {item.href ? (
+            <a href={item.href} class="break-all underline-offset-2 hover:text-accent-700 hover:underline" target={item.href.startsWith('http') ? '_blank' : undefined} rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}>
+              {item.value}
+            </a>
+          ) : (
+            <span>{item.value}</span>
+          )}
+        </dd>
+        <div>
+          {item.copy && (
+            <button
+              class="rounded-md border border-slate-300 px-2 py-1 text-xs text-slate-600 transition hover:bg-slate-100"
+              data-copy={item.copy}
+              type="button"
+            >
+              Copy
+            </button>
+          )}
+        </div>
+      </div>
+    ))}
+  </dl>
+</div>
+
+<script>
+  document.querySelectorAll('button[data-copy]').forEach((button) => {
+    button.addEventListener('click', async () => {
+      const text = button.getAttribute('data-copy');
+      if (!text) return;
+      try {
+        await navigator.clipboard.writeText(text);
+        const original = button.textContent;
+        button.textContent = 'Copied';
+        setTimeout(() => {
+          button.textContent = original;
+        }, 1200);
+      } catch {
+        button.textContent = 'Failed';
+        setTimeout(() => {
+          button.textContent = 'Copy';
+        }, 1200);
+      }
+    });
+  });
+</script>

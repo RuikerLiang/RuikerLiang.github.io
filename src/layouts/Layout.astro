@@ -1,0 +1,74 @@
+---
+import '@/styles/global.css';
+
+const {
+  title = 'Kerui Zhang | Academic Homepage',
+  description = 'Academic homepage for graduate school, RA, and research internship applications.',
+  path = '/',
+  ogImage = '/og-cover.svg'
+} = Astro.props;
+
+const siteURL = Astro.site ?? Astro.url;
+const basePath = (import.meta.env.BASE_URL || '/').replace(/\/$/, '') || '/';
+const normalizedPath = path === '/' ? '' : path.replace(/^\//, '');
+const canonicalPath = path === '/'
+  ? (basePath === '/' ? '/' : `${basePath}/`)
+  : `${basePath === '/' ? '' : basePath}/${normalizedPath}`;
+const ogPath = ogImage.startsWith('/')
+  ? `${basePath === '/' ? '' : basePath}${ogImage}`
+  : `${basePath === '/' ? '' : `${basePath}/`}${ogImage}`;
+
+const canonicalURL = new URL(canonicalPath, siteURL);
+const ogURL = new URL(ogPath, siteURL);
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="robots" content="index,follow" />
+    <link rel="canonical" href={canonicalURL.toString()} />
+    <link rel="icon" type="image/svg+xml" href={`${basePath === '/' ? '' : basePath}/favicon.svg`} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalURL.toString()} />
+    <meta property="og:image" content={ogURL.toString()} />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogURL.toString()} />
+  </head>
+  <body>
+    <slot />
+
+    <script>
+      const revealEls = document.querySelectorAll('[data-reveal]');
+      if ('IntersectionObserver' in window && revealEls.length > 0) {
+        const io = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('in-view');
+                io.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.15 }
+        );
+
+        revealEls.forEach((el) => {
+          el.classList.add('reveal');
+          io.observe(el);
+        });
+      } else {
+        revealEls.forEach((el) => el.classList.add('in-view'));
+      }
+    </script>
+  </body>
+</html>

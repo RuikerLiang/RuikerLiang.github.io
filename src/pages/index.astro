@@ -1,0 +1,67 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import Navbar from '@/components/Navbar.astro';
+import Footer from '@/components/Footer.astro';
+import SectionTitle from '@/components/SectionTitle.astro';
+import ProfileHero from '@/components/ProfileHero.astro';
+import ResearchCard from '@/components/ResearchCard.astro';
+import ProjectCard from '@/components/ProjectCard.astro';
+import NewsList from '@/components/NewsList.astro';
+import { profile, researchInterests } from '@/data/profile';
+import { projects } from '@/data/projects';
+import { news } from '@/data/news';
+---
+
+<Layout
+  title="Kerui Zhang | Home"
+  description="Academic homepage of Kerui Zhang for graduate school, RA, and research internship applications."
+  path="/"
+>
+  <Navbar />
+  <main>
+    <ProfileHero />
+
+    <section class="section-space" aria-labelledby="bio-title">
+      <div class="container-page" data-reveal>
+        <SectionTitle title="Bio" subtitle="A short overview for faculty and research collaborators." />
+        <p class="max-w-4xl text-sm leading-7 text-slate-600 sm:text-base">{profile.bio}</p>
+      </div>
+    </section>
+
+    <section class="section-space" aria-labelledby="research-summary-title">
+      <div class="container-page">
+        <SectionTitle
+          title="Research Interests"
+          subtitle="Current interests and directions I plan to pursue in future graduate studies."
+        />
+        <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {researchInterests.slice(0, 3).map((interest) => (
+            <ResearchCard {...interest} />
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="section-space" aria-labelledby="selected-projects-title">
+      <div class="container-page">
+        <SectionTitle title="Selected Projects" subtitle="A concise selection of representative technical work." />
+        <div class="grid gap-4 lg:grid-cols-2">
+          {projects.slice(0, 2).map((project) => (
+            <ProjectCard project={project} />
+          ))}
+        </div>
+        <div class="mt-6" data-reveal>
+          <a href="/projects" class="btn-secondary">View All Projects</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-space" aria-labelledby="news-updates-title">
+      <div class="container-page">
+        <SectionTitle title="News / Updates" subtitle="Recent progress and updates related to my academic preparation." />
+        <NewsList items={news} />
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>
