@@ -86,11 +86,12 @@ Production files are generated in `dist/`.
 
 1. Push this project to GitHub.
 2. In repository settings, open **Pages** and choose **GitHub Actions** as the source.
-3. This repository already includes [deploy.yml](.github/workflows/deploy.yml), which will:
+3. This step is mandatory before the first successful workflow run. If it is not enabled yet, `actions/configure-pages` will fail with a "not enabled and configured to build using GitHub Actions" error.
+4. This repository already includes [deploy.yml](.github/workflows/deploy.yml), which will:
    - install dependencies
    - build the Astro site
    - deploy `dist/` to GitHub Pages automatically on every push to `main`
-4. This workflow is configured for this repository with:
+5. This workflow is configured for this repository with:
    - `PUBLIC_SITE_URL=https://ruikerliang.github.io`
    - `PUBLIC_BASE_PATH=/Unimodal.github.io`
 
