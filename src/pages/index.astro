@@ -48,7 +48,7 @@ import { projects } from '@/data/projects';
     <section id="projects" class="section-space" aria-labelledby="selected-projects-title">
       <div class="container-page">
         <SectionTitle title="Projects" subtitle="Representative work across backend engineering, systems programming, and robotics." />
-        <div class="grid gap-4 lg:grid-cols-2">
+        <div class="grid gap-4">
           {projects.map((project) => (
             <ProjectCard project={project} />
           ))}
