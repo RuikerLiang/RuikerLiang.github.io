@@ -82,19 +82,10 @@ export const education: EducationItem[] = [
 ];
 
 export const skills = [
-  'C/C++',
+  'C++',
   'Python',
-  'Django',
-  'ROS',
-  'RISC-V',
-  'Operating Systems',
-  'Virtual Memory',
+  'PyTorch',
   'Linux',
-  'Shell',
-  'Backend Development',
-  'Server Operations',
-  'Git',
-  'Team Collaboration'
 ];
 
 export const motivation = 'I enjoy building complete systems from the ground up and taking ownership of both core implementation details and practical deployment work. I am especially motivated by projects that combine strong engineering fundamentals with clear real-world utility.';
