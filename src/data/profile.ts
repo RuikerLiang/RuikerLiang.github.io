@@ -20,6 +20,7 @@ export type ResearchInterest = {
 
 export type AwardItem = {
   title: string;
+  period?: string;
   description?: string;
 };
 
@@ -120,6 +121,10 @@ export const timeline: ExperienceItem[] = [
 ];
 
 export const awards: AwardItem[] = [
+  {
+    title: 'Teaching Assistant for CS225: Data Structures',
+    period: '2026.1 - 2026.6'
+  },
   {
     title: 'National Scholarship',
     description: 'Recognized for strong academic performance and overall achievement during undergraduate study.'
