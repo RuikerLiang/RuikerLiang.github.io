@@ -2,17 +2,20 @@
 1 verbose cli [ '/home/unimdoal/.nvm/versions/io.js/v2.5.0/bin/iojs',
 1 verbose cli   '/home/unimdoal/.nvm/versions/io.js/v2.5.0/bin/npm',
 1 verbose cli   'run',
-1 verbose cli   'build' ]
+1 verbose cli   'check' ]
 2 info using npm@2.13.2
 3 info using node@v2.5.0
-4 verbose run-script [ 'prebuild', 'build', 'postbuild' ]
-5 info prebuild kerui-academic-homepage@1.0.0
-6 info build kerui-academic-homepage@1.0.0
+4 verbose run-script [ 'precheck', 'check', 'postcheck' ]
+5 info precheck kerui-academic-homepage@1.0.0
+6 info check kerui-academic-homepage@1.0.0
 7 verbose unsafe-perm in lifecycle true
-8 info kerui-academic-homepage@1.0.0 Failed to exec build script
-9 verbose stack Error: kerui-academic-homepage@1.0.0 build: `astro build`
-9 verbose stack spawn ENOENT
-9 verbose stack     at ChildProcess.<anonymous> (/home/unimdoal/.nvm/versions/io.js/v2.5.0/lib/node_modules/npm/lib/utils/spawn.js:17:16)
+8 info kerui-academic-homepage@1.0.0 Failed to exec check script
+9 verbose stack Error: kerui-academic-homepage@1.0.0 check: `astro check`
+9 verbose stack Exit status 1
+9 verbose stack     at EventEmitter.<anonymous> (/home/unimdoal/.nvm/versions/io.js/v2.5.0/lib/node_modules/npm/lib/utils/lifecycle.js:214:16)
+9 verbose stack     at emitTwo (events.js:87:13)
+9 verbose stack     at EventEmitter.emit (events.js:172:7)
+9 verbose stack     at ChildProcess.<anonymous> (/home/unimdoal/.nvm/versions/io.js/v2.5.0/lib/node_modules/npm/lib/utils/spawn.js:24:14)
 9 verbose stack     at emitTwo (events.js:87:13)
 9 verbose stack     at ChildProcess.emit (events.js:172:7)
 9 verbose stack     at maybeClose (internal/child_process.js:764:16)
@@ -20,21 +23,18 @@
 10 verbose pkgid kerui-academic-homepage@1.0.0
 11 verbose cwd /home/unimdoal/Workspace/Ruikerliang.github.io
 12 error Linux 6.6.87.2-microsoft-standard-WSL2
-13 error argv "/home/unimdoal/.nvm/versions/io.js/v2.5.0/bin/iojs" "/home/unimdoal/.nvm/versions/io.js/v2.5.0/bin/npm" "run" "build"
+13 error argv "/home/unimdoal/.nvm/versions/io.js/v2.5.0/bin/iojs" "/home/unimdoal/.nvm/versions/io.js/v2.5.0/bin/npm" "run" "check"
 14 error node v2.5.0
 15 error npm  v2.13.2
-16 error file sh
-17 error code ELIFECYCLE
-18 error errno ENOENT
-19 error syscall spawn
-20 error kerui-academic-homepage@1.0.0 build: `astro build`
-20 error spawn ENOENT
-21 error Failed at the kerui-academic-homepage@1.0.0 build script 'astro build'.
-21 error This is most likely a problem with the kerui-academic-homepage package,
-21 error not with npm itself.
-21 error Tell the author that this fails on your system:
-21 error     astro build
-21 error You can get their info via:
-21 error     npm owner ls kerui-academic-homepage
-21 error There is likely additional logging output above.
-22 verbose exit [ 1, true ]
+16 error code ELIFECYCLE
+17 error kerui-academic-homepage@1.0.0 check: `astro check`
+17 error Exit status 1
+18 error Failed at the kerui-academic-homepage@1.0.0 check script 'astro check'.
+18 error This is most likely a problem with the kerui-academic-homepage package,
+18 error not with npm itself.
+18 error Tell the author that this fails on your system:
+18 error     astro check
+18 error You can get their info via:
+18 error     npm owner ls kerui-academic-homepage
+18 error There is likely additional logging output above.
+19 verbose exit [ 1, true ]
