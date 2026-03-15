@@ -18,14 +18,19 @@ export type ResearchInterest = {
   summary: string;
 };
 
+export type AwardItem = {
+  title: string;
+  description?: string;
+};
+
 export type ContactInfo = {
   name: string;
-  email: string;
-  academicEmail: string;
-  github: string;
-  googleScholar: string;
-  cvLink: string;
-  location: string;
+  email?: string;
+  academicEmail?: string;
+  github?: string;
+  googleScholar?: string;
+  cvLink?: string;
+  location?: string;
   linkedin?: string;
   x?: string;
   blog?: string;
@@ -34,93 +39,94 @@ export type ContactInfo = {
 export const profile = {
   name: 'Kerui Zhang',
   displayName: 'Kerui Zhang',
-  title: 'Undergraduate Student / Research Applicant',
+  title: 'ECE Undergraduate Student',
   affiliation: 'Zhejiang University / ZJUI',
   location: 'Hangzhou, China',
-  email: 'your_email@example.com',
-  academicEmail: 'your_academic_email@example.com',
-  github: 'https://github.com/yourname',
-  googleScholar: 'https://scholar.google.com/',
-  cvLink: '/cv.pdf',
-  shortTagline: 'Applying for graduate study, research internships, and RA opportunities in AI and graphics.',
-  bio: 'I am an undergraduate student interested in computer graphics, generative models, inverse rendering, and embodied intelligence. I am building this website to showcase my academic background, research interests, and selected projects for graduate school and research applications.',
-  avatarAlt: 'Portrait placeholder for Kerui Zhang'
+  shortTagline: 'Class of 2023 ZJUI ECE student building operating systems, backend services, robotics software, and end-to-end engineering projects.',
+  bio: 'I am an undergraduate student in Electrical and Computer Engineering at Zhejiang University / ZJUI. My work centers on hands-on system building, from full-stack web development and Linux server operations to RISC-V operating systems and ROS-based robotics control. I was awarded the National Scholarship and enjoy taking ownership of complete technical systems from early development through deployment.',
+  avatarAlt: 'Portrait of Kerui Zhang',
+  highlights: ['Class of 2023', 'ZJUI ECE', 'National Scholarship']
 };
 
 export const researchInterests: ResearchInterest[] = [
   {
-    title: 'Computer Graphics',
-    keywords: ['Rendering', 'Geometry Processing', 'Differentiable Graphics'],
-    summary: 'I am interested in physically grounded visual computing, from rendering foundations to learnable graphics pipelines.'
+    title: 'Operating Systems',
+    keywords: ['RISC-V', 'Multithreading', 'Virtual Memory'],
+    summary: 'I enjoy building low-level systems that expose how scheduling, memory, and device management work together.'
   },
   {
-    title: 'Generative Models / Diffusion Models',
-    keywords: ['Diffusion', 'Text-to-3D', 'Controllable Generation'],
-    summary: 'I explore how modern generative models can be made controllable and reliable for scientific and visual creation tasks.'
+    title: 'Backend Engineering',
+    keywords: ['Django', 'Deployment', 'Server Operations'],
+    summary: 'I like owning backend services end to end, including application logic, deployment, and day-to-day maintenance.'
   },
   {
-    title: 'Inverse Rendering',
-    keywords: ['Material Estimation', 'Lighting Reconstruction', 'Optimization'],
-    summary: 'I study inverse problems that recover scene properties from images under uncertain lighting and geometry.'
+    title: 'Robotics Software',
+    keywords: ['ROS', 'Control Systems', 'Integration'],
+    summary: 'I am interested in software systems that connect robot control, coordination, and real-world execution.'
   },
   {
-    title: '3D Vision',
-    keywords: ['NeRF', '3D Reconstruction', 'View Synthesis'],
-    summary: 'My focus includes representation learning for geometry and appearance to bridge perception and generation.'
-  },
-  {
-    title: 'Embodied AI',
-    keywords: ['Simulation', 'Policy Learning', 'Multimodal Reasoning'],
-    summary: 'I am interested in embodied systems that integrate visual perception, language, and control for real-world tasks.'
+    title: 'Collaborative Product Development',
+    keywords: ['Team Projects', 'Full-Stack Systems', 'Expense Sharing'],
+    summary: 'I value building practical software with clear user-facing goals, especially when it requires coordination across a team.'
   }
 ];
 
 export const education: EducationItem[] = [
   {
-    degree: 'B.Eng. in Computer Science (Expected)',
+    degree: 'B.Eng. in Electrical and Computer Engineering',
     institution: 'Zhejiang University / University of Illinois Urbana-Champaign Institute (ZJUI)',
-    period: '2022 – Present',
-    details: 'Relevant coursework: Computer Graphics, Machine Learning, Computer Vision, Linear Algebra.'
+    period: '2023 - Present',
+    details: 'Class of 2023. Project work includes operating systems, backend development, account management systems, and robotics software.'
   }
 ];
 
 export const skills = [
+  'C/C++',
   'Python',
-  'C++',
-  'PyTorch',
-  'Computer Vision',
-  'Deep Learning',
-  'LaTeX',
+  'Django',
+  'ROS',
+  'RISC-V',
+  'Operating Systems',
+  'Virtual Memory',
+  'Linux',
+  'Shell',
+  'Backend Development',
+  'Server Operations',
   'Git',
-  'Linux'
+  'Team Collaboration'
 ];
 
-export const motivation = 'I aim to conduct research that combines principled visual modeling with modern learning methods, and eventually contributes to robust 3D understanding and generation systems for both academic and real-world impact.';
+export const motivation = 'I enjoy building complete systems from the ground up and taking ownership of both core implementation details and practical deployment work. I am especially motivated by projects that combine strong engineering fundamentals with clear real-world utility.';
 
 export const timeline: ExperienceItem[] = [
   {
-    title: 'Undergraduate Research Preparation',
-    organization: 'Self-Driven Projects',
-    period: '2024 – Present',
-    description: 'Developing research prototypes in graphics and generative modeling while preparing materials for research applications.'
+    title: 'Full-Stack Website Development',
+    organization: 'navarythm.com',
+    period: 'Independent Project',
+    description: 'Led the initial product development, implemented the Django backend, and handled deployment plus routine server operations.'
   },
   {
-    title: 'Course Project Development',
+    title: 'Systems Programming',
     organization: 'Zhejiang University / ZJUI',
-    period: '2023 – 2025',
-    description: 'Built project-based systems in machine learning and visual computing with emphasis on reproducibility and clear technical communication.'
+    period: 'ECE391',
+    description: 'Built a RISC-V operating system with multithreading, disk driver, virtual memory, and shell support.'
+  },
+  {
+    title: 'Robotics Control Development',
+    organization: 'Meta ROS',
+    period: 'Project Experience',
+    description: 'Worked on a ROS-based robot control system with a focus on software integration and control behavior.'
+  }
+];
+
+export const awards: AwardItem[] = [
+  {
+    title: 'National Scholarship',
+    description: 'Recognized for strong academic performance and overall achievement during undergraduate study.'
   }
 ];
 
 export const contactInfo: ContactInfo = {
   name: 'Kerui Zhang',
-  email: 'your_email@example.com',
-  academicEmail: 'your_academic_email@example.com',
-  github: 'https://github.com/yourname',
-  googleScholar: 'https://scholar.google.com/',
-  cvLink: '/cv.pdf',
-  location: 'Hangzhou, China',
-  linkedin: 'https://www.linkedin.com/in/yourname',
-  x: 'https://x.com/yourname',
-  blog: 'https://yourblog.example.com'
+  location: 'Hangzhou, China'
 };

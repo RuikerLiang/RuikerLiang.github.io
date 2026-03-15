@@ -13,46 +13,34 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    name: 'Diffusion-Guided Indoor Scene Generation',
-    period: '2025',
-    summary: 'A controllable pipeline that synthesizes indoor scene layouts and appearance-consistent renderings from text constraints.',
-    technologies: ['PyTorch', 'Diffusion Models', '3D Scene Representation'],
-    contribution: 'Designed controllable conditioning signals and built the evaluation pipeline for layout coherence and visual fidelity.',
+    name: 'navarythm.com',
+    period: 'Independent Project',
+    summary: 'Built the early version of navarythm.com as a full-stack web product, covering backend development and production server operations.',
+    technologies: ['Django', 'Backend Development', 'Linux', 'Server Operations'],
+    contribution: 'Owned the initial development end to end, implemented the Django backend, and managed deployment plus routine server maintenance.',
     links: {
-      code: 'https://github.com/yourname/diffusion-scene',
-      demo: 'https://example.com/demo/scene'
+      demo: 'https://navarythm.com'
     }
   },
   {
-    name: 'Neural Inverse Rendering for Material Recovery',
-    period: '2025',
-    summary: 'Estimated per-pixel material properties under mixed illumination using a differentiable rendering objective.',
-    technologies: ['Inverse Rendering', 'Differentiable Rendering', 'Computer Graphics'],
-    contribution: 'Implemented optimization strategy and ablation experiments, and analyzed robustness under sparse-view settings.',
-    links: {
-      paper: 'https://arxiv.org/',
-      code: 'https://github.com/yourname/inverse-rendering'
-    }
+    name: 'ECE391 RISC-V Operating System',
+    period: 'Course Project',
+    summary: 'Implemented a RISC-V operating system with key subsystems for execution, storage, memory management, and user interaction.',
+    technologies: ['C', 'RISC-V', 'Operating Systems', 'Virtual Memory'],
+    contribution: 'Independently completed multithreading, disk driver, virtual memory, and shell functionality across the system.'
   },
   {
-    name: '3D Vision Benchmark for Cross-View Consistency',
-    period: '2024',
-    summary: 'Built a lightweight benchmark to evaluate multi-view consistency across 3D reconstruction and view synthesis methods.',
-    technologies: ['3D Vision', 'Evaluation', 'Data Pipeline'],
-    contribution: 'Curated benchmark protocol, developed metric implementation, and delivered reproducible experiment scripts.',
-    links: {
-      code: 'https://github.com/yourname/3d-consistency-benchmark'
-    }
+    name: 'CS411 Account Management System',
+    period: 'Team Project',
+    summary: 'Worked on an account management system designed around group expense sharing and collaborative bill splitting.',
+    technologies: ['Full-Stack Development', 'Database', 'Group Expense Splitting', 'Team Collaboration'],
+    contribution: 'Contributed as a team member with primary responsibility for the core group expense-splitting workflow.'
   },
   {
-    name: 'Embodied Navigation in Language-Conditioned Environments',
-    period: '2024',
-    summary: 'Studied policy learning with multimodal inputs for goal-oriented navigation tasks in simulation environments.',
-    technologies: ['Embodied AI', 'Reinforcement Learning', 'Multimodal Learning'],
-    contribution: 'Built training environment wrappers and investigated language grounding strategies for improved policy success rates.',
-    links: {
-      paper: 'https://arxiv.org/',
-      demo: 'https://example.com/demo/embodied'
-    }
+    name: 'Meta ROS Robot Control System',
+    period: 'Project Experience',
+    summary: 'Developed a ROS-based robot control system for integrating robot behavior, communication, and control logic.',
+    technologies: ['ROS', 'Robotics', 'Linux', 'Control Systems'],
+    contribution: 'Built and integrated robot control modules on top of ROS to support coordinated system behavior.'
   }
 ];

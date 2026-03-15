@@ -14,9 +14,15 @@ import { profile } from '@/data/profile';
           <p class="mt-3 text-base font-medium text-slate-700 sm:text-lg">{profile.title}</p>
           <p class="mt-5 max-w-2xl text-sm leading-7 text-slate-600 sm:text-base">{profile.shortTagline}</p>
 
+          <ul class="mt-5 flex flex-wrap gap-2" aria-label="Highlights">
+            {profile.highlights.map((item) => (
+              <li class="rounded-full bg-white/80 px-3 py-1 text-sm font-medium text-slate-700 ring-1 ring-slate-200">{item}</li>
+            ))}
+          </ul>
+
           <div class="mt-6 flex flex-wrap gap-3">
-            <a href="/projects" class="btn-primary">View Projects</a>
-            <a href="/contact" class="btn-secondary">Contact Me</a>
+            <a href="#projects" class="btn-primary">View Projects</a>
+            <a href="#background" class="btn-secondary">See Background</a>
           </div>
         </div>
 
@@ -24,7 +30,7 @@ import { profile } from '@/data/profile';
           <div class="card-base flex aspect-square items-center justify-center rounded-2xl border-dashed text-center">
             <div>
               <p class="text-sm font-medium text-slate-500">Profile Photo</p>
-              <p class="mt-1 text-xs text-slate-400">Replace with your own image later</p>
+              <p class="mt-1 text-xs text-slate-400">Optional: add your portrait here later</p>
             </div>
           </div>
         </div>
