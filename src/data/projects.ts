@@ -13,13 +13,13 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    name: 'navarythm.com',
+    name: 'NavaRhythm',
     period: 'Independent Project',
-    summary: 'Built the early version of navarythm.com as a full-stack web product, covering backend development and production server operations.',
+    summary: 'Built the early version of NavaRhythm as a full-stack web product, covering backend development and production server operations.',
     technologies: ['Django', 'Backend Development', 'Linux', 'Server Operations'],
     contribution: 'Owned the initial development end to end, implemented the Django backend, and managed deployment plus routine server maintenance.',
     links: {
-      demo: 'https://navarythm.com'
+      demo: 'https://navarhythm.com/'
     }
   },
   {

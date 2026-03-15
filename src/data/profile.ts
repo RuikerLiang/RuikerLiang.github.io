@@ -101,7 +101,7 @@ export const motivation = 'I enjoy building complete systems from the ground up 
 export const timeline: ExperienceItem[] = [
   {
     title: 'Full-Stack Website Development',
-    organization: 'navarythm.com',
+    organization: 'NavaRhythm',
     period: 'Independent Project',
     description: 'Led the initial product development, implemented the Django backend, and handled deployment plus routine server operations.'
   },
