@@ -42,9 +42,8 @@ export const profile = {
   displayName: 'Kerui Zhang',
   title: 'ECE Undergraduate Student',
   affiliation: 'Zhejiang University / ZJUI',
-  location: 'Hangzhou, China',
-  shortTagline: 'Class of 2023 ZJUI ECE student building operating systems, backend services, robotics software, and end-to-end engineering projects.',
-  bio: 'I am an undergraduate student in Electrical and Computer Engineering at Zhejiang University / ZJUI. My work centers on hands-on system building, from full-stack web development and Linux server operations to RISC-V operating systems and ROS-based robotics control. I was awarded the National Scholarship and enjoy taking ownership of complete technical systems from early development through deployment.',
+  shortTagline: '2023 ZJUI ECE student.',
+  bio: 'I am strongly interested in GPGPU, 3D AIGC, computer graphics, and machine learning. I have a solid programming foundation and enjoy turning ideas into practical projects through code. I am particularly motivated by research and development at the intersection of high-performance computing, generative models, and graphics, and I look forward to exploring innovative and challenging problems in these areas.',
   avatarAlt: 'Portrait of Kerui Zhang',
   highlights: ['Class of 2023', 'ZJUI ECE', 'National Scholarship']
 };
@@ -77,7 +76,6 @@ export const education: EducationItem[] = [
     degree: 'B.Eng. in Electrical and Computer Engineering',
     institution: 'Zhejiang University / University of Illinois Urbana-Champaign Institute (ZJUI)',
     period: '2023 - Present',
-    details: 'Class of 2023. Project work includes operating systems, backend development, account management systems, and robotics software.'
   }
 ];
 
@@ -101,13 +99,13 @@ export const timeline: ExperienceItem[] = [
     title: 'Systems Programming',
     organization: 'Zhejiang University / ZJUI',
     period: 'ECE391',
-    description: 'Built a RISC-V operating system with multithreading, disk driver, virtual memory, and shell support.'
+    description: 'Built a RISC-V operating system from scratch, starting from low-level CPU interactions, and implemented multithreading, disk drivers, virtual memory, a shell, and network support.'
   },
   {
     title: 'Robotics Control Development',
     organization: 'Meta ROS',
     period: 'Project Experience',
-    description: 'Worked on a ROS-based robot control system with a focus on software integration and control behavior.'
+    description: 'Built a ROS-based control system for RoboMaster competition robots, supporting diverse robot configurations such as Mecanum-wheel and omnidirectional mobile bases, robotic arms, and projectile launching modules.'
   }
 ];
 
