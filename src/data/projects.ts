@@ -15,9 +15,9 @@ export const projects: Project[] = [
   {
     name: 'NavaRhythm',
     period: 'Independent Project',
-    summary: 'Built the early version of NavaRhythm as a full-stack web product, covering backend development and production server operations.',
-    technologies: ['Django', 'Backend Development', 'Linux', 'Server Operations'],
-    contribution: 'Owned the initial development end to end, implemented the Django backend, and managed deployment plus routine server maintenance.',
+    summary: 'Developed NavaRhythm as a full-stack web project, building the backend and handling deployment in a production Linux environment.',
+    technologies: ['Python', 'Django', 'Linux', 'Server Operations'],
+    contribution: 'Led the project from initial development to deployment, with primary responsibility for backend implementation and routine server maintenance.',
     links: {
       demo: 'https://navarhythm.com/'
     }
@@ -25,22 +25,15 @@ export const projects: Project[] = [
   {
     name: 'ECE391 RISC-V Operating System',
     period: 'Course Project',
-    summary: 'Implemented a RISC-V operating system with key subsystems for execution, storage, memory management, and user interaction.',
-    technologies: ['C', 'RISC-V', 'Operating Systems', 'Virtual Memory'],
-    contribution: 'Independently completed multithreading, disk driver, virtual memory, and shell functionality across the system.'
-  },
-  {
-    name: 'CS411 Account Management System',
-    period: 'Team Project',
-    summary: 'Worked on an account management system designed around group expense sharing and collaborative bill splitting.',
-    technologies: ['Full-Stack Development', 'Database', 'Group Expense Splitting', 'Team Collaboration'],
-    contribution: 'Contributed as a team member with primary responsibility for the core group expense-splitting workflow.'
+    summary: 'Built a RISC-V operating system from scratch, covering low-level CPU interaction, multithreading, disk drivers, virtual memory, shell support, and networking.',
+    technologies: ['C++', 'RISC-V', 'Operating Systems', 'Linux'],
+    contribution: 'Implemented core system components independently, including multithreading, storage, virtual memory, shell functionality, and network-related support.'
   },
   {
     name: 'Meta ROS Robot Control System',
     period: 'Project Experience',
-    summary: 'Developed a ROS-based robot control system for integrating robot behavior, communication, and control logic.',
-    technologies: ['ROS', 'Robotics', 'Linux', 'Control Systems'],
-    contribution: 'Built and integrated robot control modules on top of ROS to support coordinated system behavior.'
+    summary: 'Built a ROS-based control system for RoboMaster competition robots, supporting multiple robot configurations including mobile bases, robotic arms, and launching modules.',
+    technologies: ['C++', 'ROS', 'Linux', 'Robotics'],
+    contribution: 'Developed and integrated control modules for different robot subsystems, with a focus on reliable coordination across diverse hardware configurations.'
   }
 ];

@@ -19,35 +19,21 @@ A lightweight, static, and maintainable personal academic homepage for graduate 
 ├─ tailwind.config.mjs
 ├─ tsconfig.json
 ├─ public/
-│  ├─ cv.pdf
-│  ├─ favicon.svg
-│  └─ og-cover.svg
+│  └─ .nojekyll
 └─ src/
    ├─ components/
-   │  ├─ ContactList.astro
    │  ├─ Footer.astro
    │  ├─ Navbar.astro
-   │  ├─ NewsList.astro
    │  ├─ ProfileHero.astro
    │  ├─ ProjectCard.astro
-   │  ├─ PublicationItem.astro
-   │  ├─ ResearchCard.astro
    │  └─ SectionTitle.astro
    ├─ data/
-   │  ├─ news.ts
    │  ├─ profile.ts
-   │  ├─ projects.ts
-   │  └─ publications.ts
+   │  └─ projects.ts
    ├─ layouts/
    │  └─ Layout.astro
    ├─ pages/
-   │  ├─ about.astro
-   │  ├─ contact.astro
-   │  ├─ cv.astro
-   │  ├─ index.astro
-   │  ├─ projects.astro
-   │  ├─ publications.astro
-   │  └─ research.astro
+   │  └─ index.astro
    ├─ styles/
    │  └─ global.css
    └─ env.d.ts
@@ -59,8 +45,6 @@ Edit only these files to update your profile content:
 
 - `src/data/profile.ts`
 - `src/data/projects.ts`
-- `src/data/publications.ts`
-- `src/data/news.ts`
 
 ## Local Development
 
@@ -103,6 +87,5 @@ Production files are generated in `dist/`.
 
 ## Notes
 
-- `public/cv.pdf` is currently a placeholder PDF. Replace it with your real CV file.
 - Current Pages site is configured with `PUBLIC_SITE_URL=https://ruikerliang.github.io` and `PUBLIC_BASE_PATH=/`.
 - The site is fully static and suitable for fast deployment and maintenance.

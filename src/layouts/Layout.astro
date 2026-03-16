@@ -4,8 +4,7 @@ import '@/styles/global.css';
 const {
   title = 'Kerui Zhang | Personal Homepage',
   description = 'Personal homepage of Kerui Zhang, a ZJUI ECE undergraduate student.',
-  path = '/',
-  ogImage = '/og-cover.svg'
+  path = '/'
 } = Astro.props;
 
 const siteURL = Astro.site ?? Astro.url;
@@ -14,12 +13,8 @@ const normalizedPath = path === '/' ? '' : path.replace(/^\//, '');
 const canonicalPath = path === '/'
   ? (basePath === '/' ? '/' : `${basePath}/`)
   : `${basePath === '/' ? '' : basePath}/${normalizedPath}`;
-const ogPath = ogImage.startsWith('/')
-  ? `${basePath === '/' ? '' : basePath}${ogImage}`
-  : `${basePath === '/' ? '' : `${basePath}/`}${ogImage}`;
 
 const canonicalURL = new URL(canonicalPath, siteURL);
-const ogURL = new URL(ogPath, siteURL);
 ---
 
 <!doctype html>
@@ -31,18 +26,15 @@ const ogURL = new URL(ogPath, siteURL);
     <meta name="description" content={description} />
     <meta name="robots" content="index,follow" />
     <link rel="canonical" href={canonicalURL.toString()} />
-    <link rel="icon" type="image/svg+xml" href={`${basePath === '/' ? '' : basePath}/favicon.svg`} />
 
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonicalURL.toString()} />
-    <meta property="og:image" content={ogURL.toString()} />
 
-    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content={ogURL.toString()} />
   </head>
   <body>
     <slot />
