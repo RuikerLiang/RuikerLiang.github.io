@@ -1,5 +1,5 @@
 ---
-import { profile } from '@/data/profile';
+import { contactInfo, profile } from '@/data/profile';
 ---
 
 <section class="section-space">
@@ -10,6 +10,16 @@ import { profile } from '@/data/profile';
         <h1 class="mt-4 text-4xl font-semibold leading-none tracking-tight text-slate-950 sm:text-6xl">{profile.displayName}</h1>
         <p class="mt-4 text-lg font-medium text-slate-800">{profile.title}</p>
         <p class="mt-8 max-w-3xl text-lg leading-9 text-slate-700">{profile.shortTagline}</p>
+        {(contactInfo.email || contactInfo.wechat) && (
+          <div class="mt-5 flex flex-wrap gap-x-6 gap-y-2 text-sm text-slate-600">
+            {contactInfo.email && (
+              <a href={`mailto:${contactInfo.email}`} class="underline underline-offset-4 transition hover:text-slate-900">
+                {contactInfo.email}
+              </a>
+            )}
+            {contactInfo.wechat && <p>WeChat: {contactInfo.wechat}</p>}
+          </div>
+        )}
 
         <div class="mt-10 border-t border-slate-200 pt-8">
           <section>

@@ -28,6 +28,7 @@ export type ContactInfo = {
   name: string;
   email?: string;
   academicEmail?: string;
+  wechat?: string;
   github?: string;
   googleScholar?: string;
   cvLink?: string;
@@ -43,9 +44,9 @@ export const profile = {
   title: 'ECE Undergraduate Student',
   affiliation: 'Zhejiang University / ZJUI',
   shortTagline: '2023 ZJUI ECE student.',
-  bio: 'I am strongly interested in GPGPU, 3D AIGC, computer graphics, and machine learning. I have a solid programming foundation and enjoy turning ideas into practical projects through code. I am particularly motivated by research and development at the intersection of high-performance computing, generative models, and graphics, and I look forward to exploring innovative and challenging problems in these areas.',
+  bio: 'I am interested in 3D AIGC, computer graphics, and machine learning. With a solid programming foundation and a hands-on approach to building practical systems, I hope to further deepen my work in research in the future.',
   avatarAlt: 'Portrait of Kerui Zhang',
-  highlights: ['Class of 2023', 'ZJUI ECE', 'National Scholarship']
+  highlights: ['Class of 2023', 'ZJUI ECE', 'China National Scholarship']
 };
 
 export const researchInterests: ResearchInterest[] = [
@@ -76,13 +77,8 @@ export const education: EducationItem[] = [
     degree: 'B.Eng. in Electrical and Computer Engineering',
     institution: 'Zhejiang University / University of Illinois Urbana-Champaign Institute (ZJUI)',
     period: '2023 - Present',
+    details: 'English Proficiency: TOEFL 107',
   }
-];
-
-export const skills = [
-  'C++',
-  'Python',
-  'Linux',
 ];
 
 export const motivation = 'I enjoy building complete systems from the ground up and taking ownership of both core implementation details and practical deployment work. I am especially motivated by projects that combine strong engineering fundamentals with clear real-world utility.';
@@ -102,7 +98,7 @@ export const timeline: ExperienceItem[] = [
   },
   {
     title: 'Robotics Control Development',
-    organization: 'Meta ROS',
+    organization: 'Meta-Ros',
     period: 'Project Experience',
     description: 'Built a ROS-based control system for RoboMaster competition robots, supporting diverse robot configurations such as Mecanum-wheel and omnidirectional mobile bases, robotic arms, and projectile launching modules.'
   }
@@ -114,12 +110,14 @@ export const awards: AwardItem[] = [
     period: '2026.1 - 2026.6'
   },
   {
-    title: 'National Scholarship',
-    description: 'Recognized for strong academic performance and overall achievement during undergraduate study.'
+    title: 'China National Scholarship',
+    period: '2024'
   }
 ];
 
 export const contactInfo: ContactInfo = {
   name: 'Kerui Zhang',
+  email: 'keruiz@zju.edu.cn',
+  wechat: 'keruiz3',
   location: 'Hangzhou, China'
 };

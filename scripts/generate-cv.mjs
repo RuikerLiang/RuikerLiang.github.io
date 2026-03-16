@@ -2,7 +2,7 @@ import { mkdirSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-import { awards, contactInfo, education, profile, skills } from '../src/data/profile.ts';
+import { awards, contactInfo, education, profile } from '../src/data/profile.ts';
 import { projects } from '../src/data/projects.ts';
 
 const scriptPath = fileURLToPath(import.meta.url);
@@ -103,7 +103,7 @@ function renderProjectsSection() {
 
   projects.forEach((project) => {
     lines.push(
-      `\\cvprojectheading{${escapeLatex(project.name)}}{${escapeLatex(project.period)}}{${escapeLatex(project.technologies.join(', '))}}`
+      `\\cvprojectheading{${escapeLatex(project.name)}}{${escapeLatex(project.period || '')}}{${escapeLatex(project.technologies.join(', '))}}`
     );
     lines.push('\\begin{itemize}');
     lines.push(`  \\item ${escapeLatex(project.summary)}`);
@@ -120,19 +120,12 @@ function renderProjectsSection() {
   return lines.join('\n');
 }
 
-function renderSkillsSection() {
-  return [
-    '\\section{Skills}',
-    `\\textbf{Technical:} ${escapeLatex(skills.join(', '))}`,
-  ].join('\n');
-}
-
 function renderAwardsSection() {
   const lines = ['\\section{Honors \\& Activities}', '\\begin{itemize}'];
 
   awards.forEach((award) => {
     const title = `\\textbf{${escapeLatex(award.title)}}`;
-    const period = award.period ? ` (\\textit{${escapeLatex(award.period)}})` : '';
+    const period = award.period ? ` (${escapeLatex(award.period)})` : '';
     const description = award.description ? `: ${escapeLatex(award.description)}` : '';
 
     lines.push(`  \\item ${title}${period}${description}`);
@@ -154,8 +147,6 @@ function renderBody() {
     '',
     renderProjectsSection(),
     '',
-    renderSkillsSection(),
-    '',
   ].join('\n');
 }
 
@@ -165,6 +156,8 @@ function renderHeader() {
     command('ProfileName', profile.displayName || profile.name || contactInfo.name || ''),
     command('ProfileTitle', profile.title || ''),
     command('ProfileAffiliation', formatCvAffiliation(profile.affiliation || '')),
+    command('ProfileEmail', contactInfo.email || contactInfo.academicEmail || ''),
+    command('ProfileWeChat', contactInfo.wechat || ''),
     command('ProfileLocation', ''),
     '',
   ].join('\n');

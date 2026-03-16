@@ -5,7 +5,7 @@ import Footer from '@/components/Footer.astro';
 import SectionTitle from '@/components/SectionTitle.astro';
 import ProfileHero from '@/components/ProfileHero.astro';
 import ProjectCard from '@/components/ProjectCard.astro';
-import { education, awards, skills } from '@/data/profile';
+import { education, awards } from '@/data/profile';
 import { projects } from '@/data/projects';
 ---
 
@@ -53,19 +53,6 @@ import { projects } from '@/data/projects';
           {projects.map((project) => (
             <ProjectCard project={project} />
           ))}
-        </div>
-      </div>
-    </section>
-
-    <section id="skills" class="section-space" aria-labelledby="skills-title">
-      <div class="container-page">
-        <SectionTitle title="Skills" subtitle="Tools and topics that show up repeatedly across my project work." />
-        <div class="border-t border-slate-200 pt-6" data-reveal>
-          <ul class="grid gap-x-8 gap-y-3 sm:grid-cols-2 lg:grid-cols-3">
-            {skills.map((skill) => (
-              <li class="border-b border-slate-200 pb-2 text-sm text-slate-700">{skill}</li>
-            ))}
-          </ul>
         </div>
       </div>
     </section>

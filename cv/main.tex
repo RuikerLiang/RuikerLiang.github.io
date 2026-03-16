@@ -25,6 +25,8 @@
 \input{manual-fields.tex}
 
 \newcommand{\ContactLine}{\ProfileAffiliation}
+\ifdefempty{\ProfileEmail}{}{\gappto{\ContactLine}{\enspace$\cdot$\enspace \href{mailto:\ProfileEmail}{\ProfileEmail}}}
+\ifdefempty{\ProfileWeChat}{}{\gappto{\ContactLine}{\enspace$\cdot$\enspace WeChat: \ProfileWeChat}}
 \ifdefempty{\ProfileLocation}{}{\gappto{\ContactLine}{\enspace$\cdot$\enspace \ProfileLocation}}
 
 \newcommand{\EducationExtras}{}
@@ -40,10 +42,17 @@
 }
 
 \newcommand{\cvprojectheading}[3]{%
-  \begin{tabularx}{\textwidth}{@{}Lr@{}}
-    \textbf{#1} & \textit{#2} \\
-    \multicolumn{2}{@{}l@{}}{\small\textcolor{CVMuted}{#3}}
-  \end{tabularx}\par
+  \ifstrempty{#2}{%
+    \begin{tabularx}{\textwidth}{@{}L@{}}
+      \textbf{#1} \\
+      \small\textcolor{CVMuted}{#3}
+    \end{tabularx}\par
+  }{%
+    \begin{tabularx}{\textwidth}{@{}Lr@{}}
+      \textbf{#1} & \textit{#2} \\
+      \multicolumn{2}{@{}l@{}}{\small\textcolor{CVMuted}{#3}}
+    \end{tabularx}\par
+  }%
 }
 
 \begin{document}
