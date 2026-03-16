@@ -1,0 +1,58 @@
+\documentclass[10pt,letterpaper]{article}
+
+\usepackage[letterpaper,margin=0.65in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[hidelinks]{hyperref}
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage{titlesec}
+\usepackage{etoolbox}
+\usepackage{array}
+
+\definecolor{CVAccent}{HTML}{1F4E79}
+\definecolor{CVMuted}{HTML}{5B6570}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.35em}
+\setlist[itemize]{leftmargin=1.25em, itemsep=0.15em, topsep=0.3em, parsep=0em}
+\titleformat{\section}{\large\bfseries\color{CVAccent}}{}{0em}{}[\titlerule]
+\titlespacing*{\section}{0pt}{1.0em}{0.45em}
+\newcolumntype{L}{>{\raggedright\arraybackslash}X}
+
+\input{generated/header.tex}
+\input{manual-fields.tex}
+
+\newcommand{\ContactLine}{\ProfileAffiliation}
+\ifdefempty{\ProfileLocation}{}{\gappto{\ContactLine}{\enspace$\cdot$\enspace \ProfileLocation}}
+
+\newcommand{\EducationExtras}{}
+\ifstrempty{\cvExpectedGraduation}{}{\gappto{\EducationExtras}{\item Expected Graduation: \cvExpectedGraduation}}
+\ifstrempty{\cvGPA}{}{\gappto{\EducationExtras}{\item GPA: \cvGPA}}
+\ifstrempty{\cvRank}{}{\gappto{\EducationExtras}{\item Rank: \cvRank}}
+
+\newcommand{\cventry}[3]{%
+  \begin{tabularx}{\textwidth}{@{}Lr@{}}
+    \textbf{#1} & \textit{#2} \\
+    \textit{#3} &
+  \end{tabularx}\par
+}
+
+\newcommand{\cvprojectheading}[3]{%
+  \begin{tabularx}{\textwidth}{@{}Lr@{}}
+    \textbf{#1} & \textit{#2} \\
+    \multicolumn{2}{@{}l@{}}{\small\textcolor{CVMuted}{#3}}
+  \end{tabularx}\par
+}
+
+\begin{document}
+
+{\LARGE\bfseries \ProfileName\par}
+\vspace{0.15em}
+{\normalsize \ProfileTitle\par}
+{\small \ContactLine\par}
+
+\input{generated/body.tex}
+
+\end{document}

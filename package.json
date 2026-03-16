@@ -8,7 +8,9 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "check": "astro check"
+    "check": "astro check",
+    "cv:generate": "node scripts/generate-cv.mjs",
+    "cv:pdf": "node scripts/build-cv.mjs"
   },
   "dependencies": {
     "astro": "^5.5.0"

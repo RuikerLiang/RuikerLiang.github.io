@@ -82,7 +82,6 @@ export const education: EducationItem[] = [
 export const skills = [
   'C++',
   'Python',
-  'PyTorch',
   'Linux',
 ];
 
@@ -98,8 +97,8 @@ export const timeline: ExperienceItem[] = [
   {
     title: 'Systems Programming',
     organization: 'Zhejiang University / ZJUI',
-    period: 'ECE391',
-    description: 'Built a RISC-V operating system from scratch, starting from low-level CPU interactions, and implemented multithreading, disk drivers, virtual memory, a shell, and network support.'
+    period: 'Course Work',
+    description: 'Built a RISC-V operating system from scratch as part of ECE391 course work, starting from low-level CPU interactions, and implemented multithreading, disk drivers, virtual memory, a shell, and network support.'
   },
   {
     title: 'Robotics Control Development',
